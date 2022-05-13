@@ -12,7 +12,8 @@ for (let i = 0; i < 100; i++){
 shuffle(numbers);
 
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length;
+  let randomIndex;
   
   while (currentIndex != 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -28,7 +29,7 @@ for (y = 1; y < 101; y++) {
   // document.getElementById('swiperWrapper').innerHTML += `<div class="swiper-slide"><img src="images/${y}.png" class="hero-photo" alt=""></div>`
 
   document.getElementById('swiperWrapper').innerHTML += `<div class="swiper-slide"><img src="images/${numbers[y]}.png" class="hero-photo" alt=""></div>`
-  }
+}
 
 document.querySelectorAll('.gallery-img').forEach(element => {
   element.addEventListener('click', (e)=>{
