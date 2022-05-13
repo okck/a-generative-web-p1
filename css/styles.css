@@ -3,13 +3,7 @@
 Fonts
 =============
 */
-
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap'); /* first choice */
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
 /* 
 =============
 Variables
@@ -18,25 +12,18 @@ Variables
 
 :root {
   --clr-white: rgb(240, 240, 240);
-  /* added black */
   --clr-black: rgb(0, 0, 0);  
-
-  /* --ff-primary: 'IBM Plex Mono', monospace; */
-  --ff-primary: 'Space Mono', monospace;
   --ff-primary: 'Fira Mono', monospace;
   --transition: all 50ms linear;
   --spacing: 0.02rem;
   --radius: 0.5rem;
   --border: .5px solid rgb(77, 77, 77);
-
 }
-
 /* 
 =============
 Global Styles
 =============
 */
-
 * {
   margin: 0;
   padding: 0;
@@ -61,13 +48,10 @@ img:not(.gallery-img) {
   width: 100%;
   display: block;
 }
-
 p {
   margin-bottom: 1.25rem;
   font-weight: 400;
 }
-
-
 h1, h2, h3, h4 {
   font-size: .8rem;
   line-height: 1;
