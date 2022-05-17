@@ -1,15 +1,7 @@
-/* 
-=============
-Fonts
-=============
-*/
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
-/* 
-=============
-Variables
-=============
-*/
 
+/* Variables */
 :root {
   --clr-white: rgb(240, 240, 240);
   --clr-black: rgb(0, 0, 0);  
@@ -19,11 +11,7 @@ Variables
   --radius: 0.5rem;
   --border: .5px solid rgb(77, 77, 77);
 }
-/* 
-=============
-Global Styles
-=============
-*/
+/* Global */
 * {
   margin: 0;
   padding: 0;
@@ -52,37 +40,29 @@ p {
   margin-bottom: 1.25rem;
   font-weight: 400;
 }
-h1, h2, h3, h4 {
+h1, h2 {
   font-size: .8rem;
   line-height: 1;
   letter-spacing: 0.02rem;
   margin-bottom: 1rem;
 }
 
-/* Global */
-
 .section {
   padding: 1.5rem 1.5rem;
   padding-bottom: 5rem;
 }
-
 .section-title {
   width: 95vw;
   margin: 0rem auto;
   margin-bottom: 1rem;
 }
-
 .section-center {
   width: 100%;
   margin: 0 auto;
 }
 
 
-/*
-=============== 
-Navbar
-===============
-*/
+/* Navbar */
 .navbar {
   width: 100%;
   z-index: 10;
@@ -93,7 +73,6 @@ Navbar
 .nav-header {
   margin-right: .5rem
 }
-
 .nav-center {
   width: 95vw;
   margin: 0 auto;
@@ -101,7 +80,6 @@ Navbar
   align-items: center;
   flex-wrap: wrap;
 }
-
 .nav-link {
   display: block;
   color: var(--clr-white);
@@ -117,24 +95,12 @@ Navbar
   display: flex;
 }
 
-
-
-
-/*
-=============== 
-Hero
-===============
-*/
-
+/* Hero */
 .hero {
-  /* background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)); */
   min-height: 100vh;
   width: 95vw;
   margin: 0 auto;
-  /* background: var(--clr-black); */
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   z-index: 7;
 }
 .hero-image {
@@ -147,8 +113,6 @@ Hero
   position: absolute;
   width: 20%;
   z-index: 5;
-  /* height: 95vw; */
-
   background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), rgba(0, 0, 0, 0));
   display: flex;
   flex-direction: column;
@@ -161,9 +125,7 @@ Hero
 }
 .hero-banner p {
   max-width: 45rem;
-  /* max-width: 20%; */
 }
-
 .hero-image {
   position: absolute;
   z-index: -5;
@@ -171,7 +133,6 @@ Hero
   padding: 0;
   align-self: center;
 }
-
 .youtube {
   color: grey;
   text-decoration: underline;
@@ -180,36 +141,20 @@ Hero
   color: white;
   text-decoration: underline;
 }
-  /* .hero {
-    background: linear-gradient(rgb(44,174,186,0.7),rgb(0,0,0,0.7)), url("../images/main.jpeg") center/cover no-repeat;
-  } */
 
-
-
-/*
-=============== 
-grid
-===============
-*/
-
+/* grid */
 .gallery {
   display: flex;
 }
+.gallery-center {
+  width: 95vw;
+}
 .gallery-images {
   margin-bottom: .5rem;
-  /* order: 1; */
-
-  /* display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row; */
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
 }
-
-
 #fade {
   z-index: 19;
   width: 100vw;
@@ -225,7 +170,6 @@ grid
 .grid-photo {
   display: flex;
   flex: 1 0 10%;
-  /* width: 300px; */
   height: 400px;
   object-fit: cover;
   object-position: 80%;
@@ -234,7 +178,6 @@ grid
   height: 800px;
   z-index: 20;
 }
-
 .zoom {
   position: fixed;
   top: 50%;
@@ -244,26 +187,16 @@ grid
   z-index: 20;
 }
 
-.gallery-center {
-    /* background: red; */
-  }
-
-  /* title styling */
-
-  .section-title {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .title-header {
-    flex: 1;
-    padding-right: 2.5vw;
-  }
-
-
-
-
-
+/* title styling */
+.section-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.title-header {
+  flex: 1;
+  padding-right: 2.5vw;
+}
 
 
 
@@ -276,9 +209,7 @@ grid
 .footer-center {
   width: 92vw;
   width: 95vw;
-
   margin: 0 auto;
-
   padding-top: 1rem;
   border-top: var(--border);
 }
@@ -287,10 +218,11 @@ grid
   letter-spacing: -.02rem;
 }
 
-
-
-/* #photo1, #photo2, #photo3 {
-  position: relative;
-  width: 49%;
-  object-fit: cover;
-} */
+.sand {
+  font-family: bitcount-mono-double-square, sans-serif;
+  font-weight: 300;
+  font-size: 4.4vw;
+  color: black;
+  -webkit-text-stroke: .9px rgb(240, 240, 240);
+  margin-bottom: 2rem;
+}
