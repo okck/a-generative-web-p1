@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Site Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/kfg1czx.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/styles-p5.css">
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+<script src="js/sketch-p5.js"></script>
+<title>SAND Script</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    canvas {
+        padding: 0;
+        margin: auto;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .navbar {
+        box-sizing: border-box;
+        font-family: 'Fira Mono', monospace;
+        color: rgb(240, 240, 240);
+        font-size: .8rem;
+        line-height: 1.3;
+        letter-spacing: 0.02rem;
+        -webkit-font-smoothing: antialiased;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+        background: black;
+        padding: 1rem 1.5rem;
+    }
+    .nav-header {
+        margin-right: .5rem
+    }
+    .nav-center {
+        width: 95vw;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .nav-link {
+        display: block;
+        color: rgb(240, 240, 240);
+        padding: 0 0;
+        margin-left: 1.5rem;
+        transition: all 50ms linear;
+    }
+    .nav-link:hover {
+        color: grey;
+        text-decoration: underline;
+    }
+    .nav-links {
+        display: flex;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    a {
+        text-decoration: none;
+    }
+    .side {
+        box-sizing: border-box;
+        font-family: 'Fira Mono', monospace;
+        color: rgb(240, 240, 240);
+        font-size: .8rem;
+        text-align: left;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.3;
+        letter-spacing: 0.02rem;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        padding: 0 1.5rem;
+        margin-top: 10rem;
+    }
+    .side-container {
+        width: 95vw;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .side-text-container {
+        text-align: left;
+        width: fit-content;
+        padding: 0;
+    }
+    .side-text-container p {
+        text-align: left;
+        max-width: 45rem;
+        font-family: 'pixeldingbats7','Courier';
+        color: rgb(125, 125, 125);
+        padding: 0;
+    }
+    .side-text-container span:not(#pause span):not(#generate span):not(#sand) {
+        text-align: left;
+        max-width: 45rem;
+        font-family: 'pixeldingbats7','Courier';
+        color: rgb(125, 125, 125);
+    }
+    #generate {
+        cursor: pointer;
+        text-align: center;
+    }
+    #generate span {
+        color: rgb(240, 240, 240);
+    }
+    #generate:hover {
+        color: grey;
+    }
+    #generate:hover p{
+        color: rgb(240, 240, 240);
+    }
+    #generate:active p{
+        color: rgb(240, 240, 240);
+    }
+    #pause {
+        text-align: center;
+    }
+    .hide {
+        display: none;
+    }
+    .show {
+        display: inline-block;
+    }
+    #pause2 {
+        border: .7px solid rgb(240, 240, 240);
+        padding: .7rem;
+    }
+    #resume {
+        border: .7px solid rgb(240, 240, 240);
+        padding: .7rem;
+        background: rgb(240, 240, 240);
+        color: black;
+    }
+    #pause2:hover {
+        background: rgb(240, 240, 240);
+        color: black;
+    }
+    #resume:hover {
+        background: rgb(240, 240, 240);
+        color: black;
+    }
+    #generate2 {
+        border: .7px solid rgb(240, 240, 240);
+        padding: .7rem;
+        margin-right: .5rem;
+    }
+    #generate2:hover {
+        background: rgb(240, 240, 240);
+        color: black;
+    }
+    .button-container {
+        display: flex;
+    }
+    #sand {
+        /* font-family: bitcount-mono-double-plus, sans-serif; */
+        font-family: bitcount-mono-double-square, sans-serif;
+        font-weight: 300;
+        /* font-weight: 400; */
+        font-size: 4.4vw;
+        color: black;
+        -webkit-text-stroke: .9px rgb(240, 240, 240);
+        line-height: 1;
+    }
+    .sand {
+        margin-bottom: 10rem;
+    }
+
+
+</style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="nav-center">
+            <div class="nav-header">
+                <div>a-generative-web // spring 2022</div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li>
+                    <a href="index.html" class="nav-link">home</a>
+                </li>
+                <li>
+                    <a href="script.html" class="nav-link" style="text-decoration: underline;">script</a>
+                </li>
+                <li>
+                    <a href="info.html" class="nav-link">info</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <div class="side" id="side">
+        <div class="side-container">
+            <div class="side-text-container sand">
+                <span id="sand">SAND</span>
+            </div>
+            <div class="button-container">
+                <div class="side-text-container" id="generate">
+                    <span id="generate2">GENERATE</span>
+                </div>
+                <div class="side-text-container" id="pause">
+                    <span id="pause2">PAUSE</span><span class="hide" id="resume">RESUME</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+const generate = document.getElementById("generate");
+generate.addEventListener("click", reload);
+function reload() {
+    reload = location.reload();
+}
+
+  /* Toggle Animations */
+const jstoggle = document.getElementById('pause');
+jstoggle.addEventListener('click', () => {
+    const animations = document.querySelectorAll('.test');
+    animations.forEach(animation => {
+    const running = animation.style.animationPlayState || 'running';
+    animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+    })
+    document.getElementById('pause2').classList.toggle('hide');
+    document.getElementById('resume').classList.toggle('hide');
+});
+
+</script>
+</html>
+
+
+
